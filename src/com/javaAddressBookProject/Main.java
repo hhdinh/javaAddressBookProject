@@ -15,7 +15,7 @@ public class Main {
             printMenu();
             input = getIntInput();
             if (input < 1 || input > 6) {
-                System.out.println("Invalid input! Try Again");
+                System.out.println("\nInvalid input! Try Again!\n");
             } else {
                 switch (input) {
                     case 1:
@@ -44,18 +44,17 @@ public class Main {
     }
 
     public static int getIntInput() {
-        boolean validInput = false;
+        boolean invalidInput = false;
         int input = 0;
 
-        while (!validInput) {
-            String ip = scanner.nextLine();
+        do {
             try {
-                input = Integer.parseInt(ip);
-                validInput = true;
-            } catch (NumberFormatException e) {
-                System.out.print("Invalid input. Please enter a number: ");
+                input = scanner.nextInt();
+            } catch (InputMismatchException e) {
+                invalidInput = true;
             }
-        }
+        } while (false);
+        scanner.nextLine();
         return input;
     }
 

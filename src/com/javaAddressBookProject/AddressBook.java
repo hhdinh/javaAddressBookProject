@@ -15,7 +15,7 @@ public class AddressBook {
     }
 
     public boolean addEntry(Entry entry) {
-        if (this.addressBook.contains(entry.getEmailAddress())) {
+        if (this.addressBook.contains(entry)) {
             System.out.println("This email is already in the address book.");
             return false;
         }
